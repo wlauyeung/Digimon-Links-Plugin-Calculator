@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+	<title>Digimon Links Plugin Calculator</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+ 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="icon" href="img/logo.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<link rel="stylesheet" href="mobile.css">
+	<script src="mobile.js"></script>
+	<script src="../digimon.js"></script>
+	<style>
+	</style>
+</head>
+	<body>
+		<div id="main-wrapper">
+			<div id="header">
+				<div class="center-no-width vertical-center">
+					<img src="img/logo.png" alt="logo" id="logo">
+					<span id="title">Digimon Links Plugin Calculator</span>
+				</div>
+			</div>
+			<div class="card" id="selectmenu">
+				<div class="center-no-width">
+					<div class="input-field" style="float:left;margin-right: 10px;">
+						<input id="name" type="text">
+						<label for="name">Digimon</label>
+					</div>
+					<div class="input-field" style="float:right;">
+						<input id="rookie" type="text">
+						<label for="rookie">Rookie</label>
+					</div>
+				</div>
+				<div class="center-no-width" style="width:80%">
+					<table>
+						<tr>
+							<td><a id="0-show" class="btn-floating btn-large waves-effect waves-light select">+0</a></td>
+							<td><a id="1-show" class="btn-floating btn-large waves-effect waves-light select">+1</a></td>
+							<td><a id="2-show" class="btn-floating btn-large waves-effect waves-light select">+2</a></td>
+							<td><a id="3-show" class="btn-floating btn-large waves-effect waves-light select">+3</a></td>
+							<td><a id="4-show" class="btn-floating btn-large waves-effect waves-light select">+4</a></td>
+						</tr>
+					</table>
+				</div>
+					<h4 class="center">Selected: <span id="awa_lvl">+0</span></h4>
+					<div id="dropdown_menu"></div>
+					<div style="display: table;margin: 0 auto; clear:both;">
+						<a class="waves-effect waves-light btn button" id="button_calculate" style="float:left;">Next</a>
+						<a class="waves-effect waves-light btn button" id="button_clear" style="float:left;">Clear</a>
+					</div>
+				</div>
+				<div id="resultmenus">
+					<div class="resultmenu card">
+						<p style="font-weight:bold;">Total Amount</p>
+						<div class="center">
+							<table>
+								<tr>
+									<th><img src="img/plugins/null.png" width="50" height="50"><br / >Null</th>
+									<th><img src="img/plugins/fire.png" width="50" height="50"><br / >Fire</th>
+									<th><img src="img/plugins/water.png" width="50" height="50"><br / >Water</th>
+									<th><img src="img/plugins/thunder.png" width="50" height="50"><br / >Thunder</th>
+									<th><img src="img/plugins/nature.png" width="50" height="50"><br / >Nature</th>
+									<th><img src="img/plugins/light.png" width="50" height="50"><br / >Light</th>
+									<th><img src="img/plugins/darkness.png" width="50" height="50"><br / >Darkness</th>
+								</tr>
+								<tr>
+									<td class="table_comp">V1<br /><span id='t00'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t10'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t20'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t30'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t40'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t50'>0</span></td>
+									<td class="table_comp">V1<br /><span id='t60'>0</span></td>
+								</tr>
+								<tr>
+									<td class="table_comp">V2<br /><span id='t01'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t11'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t21'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t31'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t41'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t51'>0</span></td>
+									<td class="table_comp">V2<br /><span id='t61'>0</span></td>
+								</tr>
+								<tr>
+									<td class="table_comp">V3<br /><span id='t02'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t12'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t22'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t32'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t42'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t52'>0</span></td>
+									<td class="table_comp">V3<br /><span id='t62'>0</span></td>
+								</tr>
+								<tr>
+									<td class="table_comp">V4<br /><span id='t03'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t13'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t23'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t33'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t43'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t53'>0</span></td>
+									<td class="table_comp">V4<br /><span id='t63'>0</span></td>
+								</tr>
+							</table>
+							<a class="waves-effect waves-light btn button" id="button_insert">Input Obtained Plugins</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</html>
